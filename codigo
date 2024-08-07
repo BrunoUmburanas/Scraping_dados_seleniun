@@ -1,0 +1,31 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from time import sleep
+
+
+
+chrome=webdriver.Chrome()
+chrome.get('https://books.toscrape.com/')
+sleep(0.2)
+
+titulo1 = chrome.find_element(By.XPATH,'/html/body/div/div/div/div/section/div[2]/ol/li[1]/article/h3/a') 
+print(titulo1.get_attribute('title'))
+titulo1.click()
+
+sleep(0.2)
+
+preco=chrome.find_element(By.XPATH,'/html/body/div/div/div[2]/div[2]/article/div[1]/div[2]/p[1]')
+print(preco.text)
+
+sleep(0.2)
+
+estoque=chrome.find_element(By.XPATH,'/html/body/div/div/div[2]/div[2]/article/div[1]/div[2]/p[2]')
+print(estoque.text)
+
+sleep(0.2)
+
+avaliacao=chrome.find_element(By.XPATH,'/html/body/div/div/div[2]/div[2]/article/div[1]/div[2]/p[3]')
+print(avaliacao.get_attribute('class'))
+chrome.back()
+sleep(0.2)
