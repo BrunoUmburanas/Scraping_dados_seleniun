@@ -28,4 +28,5 @@ sleep(0.2)
 avaliacao=chrome.find_element(By.XPATH,'/html/body/div/div/div[2]/div[2]/article/div[1]/div[2]/p[3]')
 print(avaliacao.get_attribute('class'))
 chrome.back()
-sleep(0.2)
+sleep(0.5)
+
